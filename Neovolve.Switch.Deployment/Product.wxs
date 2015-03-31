@@ -1,0 +1,212 @@
+<?xml version="1.0"
+      encoding="UTF-8" ?>
+<?include Definitions.wxi ?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+  <Product Id="*"
+           Name="$(var.PRODUCTNAME)"
+           Language="1033"
+           Version="$(var.ProductVersion)"
+           Manufacturer="$(var.COMPANYNAME)"
+           UpgradeCode="0FD2155F-5676-448F-864A-482BE0C26E97">
+    <Package InstallerVersion="200"
+             Compressed="yes" />
+    <Media Id="1"
+           Cabinet="media1.cab"
+           EmbedCab="yes" />
+    <Upgrade Id="0FD2155F-5676-448F-864A-482BE0C26E97">
+      <UpgradeVersion OnlyDetect="yes"
+                      Minimum="$(var.ProductVersion)"
+                      Property="NEWERVERSIONDETECTED"
+                      IncludeMinimum="no" />
+      <UpgradeVersion OnlyDetect="no"
+                      Maximum="$(var.ProductVersion)"
+                      Property="OLDERVERSIONBEINGUPGRADED"
+                      IncludeMaximum="no" />
+    </Upgrade>
+
+    <Property Id="INSTALLLOCATION">
+      <RegistrySearch Id='PreviousInstallLocation'
+                      Type='raw'
+                      Root='HKLM'
+                      Key='Software\$(var.COMPANYNAME)\$(var.PRODUCTNAME_SHORT)'
+                      Name='InstallDir' />
+    </Property>
+
+    <Property Id="ARPPRODUCTICON"
+              Value="$(var.Neovolve.Switch.TargetFileName)" />
+    <PropertyRef Id="NETFRAMEWORK40CLIENT" />
+
+    <Condition Message="This application requires .NET Framework 4.0 Client Profile. Please install the .NET Framework then run this installer again.">
+      <![CDATA[Installed OR NETFRAMEWORK40CLIENT]]>
+    </Condition>
+
+    <Directory Id="TARGETDIR"
+               Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="$(var.COMPANYNAME)Application"
+                   Name="$(var.COMPANYNAME)">
+          <Directory Id="INSTALLLOCATION"
+                     Name="$(var.PRODUCTNAME_SHORT)">
+            <Component Id="RegisterInstallPath"
+                       Guid="EA52498A-2533-43F0-9133-F00A7B7A6989">
+              <Registry Id='StoreInstallLocation'
+                        Root='HKLM'
+                        Key='Software\$(var.COMPANYNAME)\$(var.PRODUCTNAME_SHORT)'
+                        Name='InstallDir'
+                        Action='write'
+                        Type='string'
+                        Value='[INSTALLLOCATION]' />
+            </Component>
+            <Directory Id="Skins"
+                       Name="Skins">
+            </Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="$(var.COMPANYNAME)StartMenu"
+                   Name="$(var.COMPANYNAME)">
+          <Directory Id="$(var.PRODUCTNAME_SHORT)StartMenu"
+                     Name="$(var.PRODUCTNAME_SHORT)">
+            <Component Id="ApplicationShortcut"
+                       Guid="9C466EC8-A1EF-4AC6-A4F1-DEF319A6497D">
+              <Shortcut Id="ApplicationStartMenuShortcut"
+                        Name="$(var.PRODUCTNAME_SHORT)"
+                        Description="$(var.PRODUCTNAME)"
+                        Target="[INSTALLLOCATION]$(var.Neovolve.Switch.TargetFileName)"
+                        WorkingDirectory="INSTALLLOCATION"
+                        Icon="$(var.Neovolve.Switch.TargetFileName)" />
+              <Shortcut Id="LicenseStartMenuShortcut"
+                        Name="License"
+                        Description="License"
+                        Target="[INSTALLLOCATION]License.rtf"
+                        WorkingDirectory="INSTALLLOCATION" />
+              <RemoveFolder Id="Remove$(var.PRODUCTNAME_SHORT)StartMenu"
+                            Directory="$(var.PRODUCTNAME_SHORT)StartMenu"
+                            On="uninstall" />
+              <RemoveFolder Id="Remove$(var.COMPANYNAME)StartMenu"
+                            Directory="$(var.COMPANYNAME)StartMenu"
+                            On="uninstall" />
+              <RegistryValue Root="HKCU"
+                             Key="Software\$(var.COMPANYNAME)\$(var.PRODUCTNAME_SHORT)"
+                             Name="installed"
+                             Type="integer"
+                             Value="1"
+                             KeyPath="yes" />
+            </Component>
+            <Component Id="FileAssociations"
+                       Guid="6D561ED9-DAC3-4778-ABF7-DC54C55CA9A4">
+              <ProgId Id='szf'
+                      Description='$(var.PRODUCTNAME_SHORT) skin file'
+                      Icon='fil9668907CAB03180AA107EB18A3C1A747'>
+                <Extension Id='szf'
+                           ContentType='application/szf'>
+                  <Verb Id='open'
+                        Command='Open'
+                        TargetFile='fil9668907CAB03180AA107EB18A3C1A747'
+                        Argument='"%1"' />
+                </Extension>
+              </ProgId>
+              <RegistryValue Root="HKCU"
+                             Key="Software\$(var.COMPANYNAME)\$(var.PRODUCTNAME_SHORT)"
+                             Name="installed"
+                             Type="integer"
+                             Value="1"
+                             KeyPath="yes" />
+            </Component>
+          </Directory>
+        </Directory>
+      </Directory>
+
+      <Directory Id="DesktopFolder">
+        <Component Id="DesktopShortcut"
+                   Guid="71ECF8EF-5A1A-4ECB-8F64-3E4E06D2201F">
+          <Shortcut Id="ApplicationDesktopShortcut"
+                    Name="$(var.PRODUCTNAME_SHORT)"
+                    Description="$(var.PRODUCTNAME)"
+                    Target="[INSTALLLOCATION]$(var.Neovolve.Switch.TargetFileName)"
+                    WorkingDirectory="INSTALLLOCATION"
+                    Icon="$(var.Neovolve.Switch.TargetFileName)" />
+          <RegistryValue Root="HKCU"
+                         Key="Software\$(var.COMPANYNAME)\$(var.PRODUCTNAME_SHORT)"
+                         Name="installed"
+                         Type="integer"
+                         Value="1"
+                         KeyPath="yes" />
+        </Component>
+      </Directory>
+    </Directory>
+
+    <Feature Id="ProductFeature"
+             Title="$(var.PRODUCTNAME_SHORT)"
+             Level="1"
+             ConfigurableDirectory="INSTALLLOCATION"
+             AllowAdvertise="no"
+             InstallDefault="local"
+             Absent='disallow'
+             Display='expand'>
+
+      <!-- Note: The following ComponentGroupRef is required to pull in generated authoring from project references. -->
+      <ComponentGroupRef Id="Product.Generated" />
+      <ComponentRef Id="RegisterInstallPath" />
+      <ComponentGroupRef Id="Dependencies" />
+      <ComponentGroupRef Id="EventLog" />
+      <ComponentRef Id="FileAssociations" />
+
+      <Feature Id="StartMenuShortcut"
+               Level="1"
+               Title="Start menu"
+               InstallDefault="local">
+        <ComponentRef Id="ApplicationShortcut" />
+      </Feature>
+      <Feature Id="DesktopShortcut"
+               Level="1"
+               Title="Desktop"
+               InstallDefault="local">
+        <ComponentRef Id="DesktopShortcut" />
+      </Feature>
+      <Feature Id="Skins"
+               Level="1"
+               Title="Skin Pack"
+               InstallDefault="local">
+        <ComponentGroupRef Id="SkinPack" />
+      </Feature>
+    </Feature>
+
+    <!-- Specify the license agreement text to be shown in the UI. -->
+    <WixVariable Id="WixUILicenseRtf"
+                 Value="$(var.Neovolve.Switch.TargetDir)License.rtf" />
+    <Property Id="WIXUI_INSTALLDIR"
+              Value="INSTALLLOCATION" />
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT"
+              Value="Launch $(var.PRODUCTNAME)" />
+
+    <UI>
+      <UIRef Id="WixUI_Mondo" />
+      <UIRef Id="WixUI_ErrorProgressText" />
+      <Publish Dialog="ExitDialog"
+               Control="Finish"
+               Event="DoAction"
+               Value="LaunchApplication">
+        WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed
+      </Publish>
+    </UI>
+
+    <InstallExecuteSequence>
+      <RemoveExistingProducts After="InstallInitialize" />
+    </InstallExecuteSequence>
+
+    <Property Id="WixShellExecTarget"
+              Value="[INSTALLLOCATION]\$(var.Neovolve.Switch.TargetFileName)" />
+    <CustomAction Id="LaunchApplication"
+                  BinaryKey="WixCA"
+                  DllEntry="WixShellExec"
+                  Impersonate="yes" />
+
+    <Icon Id="$(var.Neovolve.Switch.TargetFileName)"
+          SourceFile="$(var.Neovolve.Switch.ProjectDir)Properties\Switch.ico" />
+  </Product>
+</Wix>

@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Neovolve.Switch.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="OnTop" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Left" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">150</Value>
+    </Setting>
+    <Setting Name="Top" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">150</Value>
+    </Setting>
+    <Setting Name="CurrentColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">#FFFFFF</Value>
+    </Setting>
+    <Setting Name="CurrentSkinPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Scale" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="Name" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Switch</Value>
+    </Setting>
+    <Setting Name="VersionCatalogAddress" Type="System.Uri" Scope="Application">
+      <Value Profile="(Default)">https://switch.svn.codeplex.com/svn/Releases/VersionCatalog.xml</Value>
+    </Setting>
+    <Setting Name="UpdatePackageType" Type="Neovolve.Switch.UpdateManagement.PackageType" Scope="User">
+      <Value Profile="(Default)">Release</Value>
+    </Setting>
+    <Setting Name="UpdateFrequency" Type="Neovolve.Switch.UpdateManagement.UpdateFrequency" Scope="User">
+      <Value Profile="(Default)">OnStart</Value>
+    </Setting>
+    <Setting Name="LastChecked" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2011-01-01</Value>
+    </Setting>
+    <Setting Name="AutoUpdatesEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

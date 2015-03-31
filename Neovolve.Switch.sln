@@ -1,0 +1,218 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neovolve.Switch", "Neovolve.Switch\Neovolve.Switch.csproj", "{5A68241D-BDD3-452D-B5A3-8DAEBCADEDE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neovolve.Switch.Skinning", "Neovolve.Switch.Skinning\Neovolve.Switch.Skinning.csproj", "{5A8006B8-5AE8-4594-90EE-FE003873AA8B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{C5F591C2-671C-4C74-AD45-4DEEB88036E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{72F20BB2-B069-4F75-975C-DA916632891C}"
+	ProjectSection(SolutionItems) = preProject
+		Solution Items\CustomDictionary.xml = Solution Items\CustomDictionary.xml
+		Local.testsettings = Local.testsettings
+		Solution Items\Neovolve.Switch.snk = Solution Items\Neovolve.Switch.snk
+		Neovolve.Switch.vsmdi = Neovolve.Switch.vsmdi
+		Solution Items\ProductInfo.cs = Solution Items\ProductInfo.cs
+		Settings.StyleCop = Settings.StyleCop
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ionic", "Ionic", "{E231D242-C247-46ED-A646-3040FFBDBE41}"
+	ProjectSection(SolutionItems) = preProject
+		References\Ionic\Ionic.Zip.dll = References\Ionic\Ionic.Zip.dll
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Neovolve", "Neovolve", "{030E5FBF-61C3-4CFF-A39D-3DA575C431F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Toolkit", "Toolkit", "{04202D65-D115-4BDD-8D28-D9F7D68C9123}"
+	ProjectSection(SolutionItems) = preProject
+		References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.chm = References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.chm
+		References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.Contracts.dll = References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.Contracts.dll
+		References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.Contracts.pdb = References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.Contracts.pdb
+		References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.dll = References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.dll
+		References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.pdb = References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.pdb
+		References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.Unity.Contracts.dll = References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.Unity.Contracts.dll
+		References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.Unity.Contracts.pdb = References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.Unity.Contracts.pdb
+		References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.Unity.dll = References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.Unity.dll
+		References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.Unity.pdb = References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.Unity.pdb
+		References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.Unity.xml = References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.Unity.xml
+		References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.xml = References\Neovolve\Neovolve.Toolkit\Neovolve.Toolkit.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microsoft", "Microsoft", "{3C1EFF7A-0EE3-49E7-84AA-2EF0750C7FE0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Practices", "Practices", "{22560465-ACC0-44B7-84E6-49FCCE0CA767}"
+	ProjectSection(SolutionItems) = preProject
+		References\Microsoft\Practices\Microsoft.Practices.EnterpriseLibrary.Common.dll = References\Microsoft\Practices\Microsoft.Practices.EnterpriseLibrary.Common.dll
+		References\Microsoft\Practices\Microsoft.Practices.EnterpriseLibrary.Common.pdb = References\Microsoft\Practices\Microsoft.Practices.EnterpriseLibrary.Common.pdb
+		References\Microsoft\Practices\Microsoft.Practices.EnterpriseLibrary.Common.xml = References\Microsoft\Practices\Microsoft.Practices.EnterpriseLibrary.Common.xml
+		References\Microsoft\Practices\Microsoft.Practices.EnterpriseLibrary.Logging.dll = References\Microsoft\Practices\Microsoft.Practices.EnterpriseLibrary.Logging.dll
+		References\Microsoft\Practices\Microsoft.Practices.EnterpriseLibrary.Logging.pdb = References\Microsoft\Practices\Microsoft.Practices.EnterpriseLibrary.Logging.pdb
+		References\Microsoft\Practices\Microsoft.Practices.EnterpriseLibrary.Logging.xml = References\Microsoft\Practices\Microsoft.Practices.EnterpriseLibrary.Logging.xml
+		References\Microsoft\Practices\Microsoft.Practices.ServiceLocation.dll = References\Microsoft\Practices\Microsoft.Practices.ServiceLocation.dll
+		References\Microsoft\Practices\Microsoft.Practices.ServiceLocation.pdb = References\Microsoft\Practices\Microsoft.Practices.ServiceLocation.pdb
+		References\Microsoft\Practices\Microsoft.Practices.Unity.Configuration.dll = References\Microsoft\Practices\Microsoft.Practices.Unity.Configuration.dll
+		References\Microsoft\Practices\Microsoft.Practices.Unity.Configuration.pdb = References\Microsoft\Practices\Microsoft.Practices.Unity.Configuration.pdb
+		References\Microsoft\Practices\Microsoft.Practices.Unity.Configuration.xml = References\Microsoft\Practices\Microsoft.Practices.Unity.Configuration.xml
+		References\Microsoft\Practices\Microsoft.Practices.Unity.dll = References\Microsoft\Practices\Microsoft.Practices.Unity.dll
+		References\Microsoft\Practices\Microsoft.Practices.Unity.Interception.dll = References\Microsoft\Practices\Microsoft.Practices.Unity.Interception.dll
+		References\Microsoft\Practices\Microsoft.Practices.Unity.Interception.pdb = References\Microsoft\Practices\Microsoft.Practices.Unity.Interception.pdb
+		References\Microsoft\Practices\Microsoft.Practices.Unity.pdb = References\Microsoft\Practices\Microsoft.Practices.Unity.pdb
+		References\Microsoft\Practices\Microsoft.Practices.Unity.xml = References\Microsoft\Practices\Microsoft.Practices.Unity.xml
+	EndProjectSection
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Neovolve.Switch.Deployment", "Neovolve.Switch.Deployment\Neovolve.Switch.Deployment.wixproj", "{43B14670-5F14-4FEB-9652-CF956093C682}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neovolve.Switch.Extensibility", "Neovolve.Switch.Extensibility\Neovolve.Switch.Extensibility.csproj", "{EDA0FD02-1A63-4F6A-912B-FD1FAEA186EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{F943055C-B7DB-490C-B48E-EDAF56B13E0A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployment", "Deployment", "{BDF98459-6D82-48FA-8580-501D6E89DD06}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Tests", "Unit Tests", "{18D605A2-F900-4EC7-86D5-9BE580B39F4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neovolve.Switch.Extensibility.UnitTests", "Neovolve.Switch.Extensibility.UnitTests\Neovolve.Switch.Extensibility.UnitTests.csproj", "{BEA5765C-75A5-470D-952B-3FA9B2566971}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rhino", "Rhino", "{575EE0A4-A412-46FC-A2D9-9ABBBB2B618D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RhinoMocks", "RhinoMocks", "{DCDC7276-2E54-4487-AE84-A885666E5C49}"
+	ProjectSection(SolutionItems) = preProject
+		References\Rhino\RhinoMocks\Rhino.Mocks.dll = References\Rhino\RhinoMocks\Rhino.Mocks.dll
+		References\Rhino\RhinoMocks\Rhino.Mocks.xml = References\Rhino\RhinoMocks\Rhino.Mocks.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Neovolve.Switch.UnitTests", "Neovolve.Switch.UnitTests\Neovolve.Switch.UnitTests.csproj", "{B0DCF35D-D3F7-4AA2-84D2-5E63084F2884}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildTaskExecutor", "BuildTaskExecutor", "{5C87A6EE-B06F-4ACE-85EC-71BCDF1EA466}"
+	ProjectSection(SolutionItems) = preProject
+		bte.bat = bte.bat
+		References\Neovolve\BuildTaskExecutor\BuildTaskExecutor.exe = References\Neovolve\BuildTaskExecutor\BuildTaskExecutor.exe
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs01
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Neovolve.Switch.Skinning\\Neovolve.Switch.Skinning.csproj
+		SccProjectTopLevelParentUniqueName1 = Neovolve.Switch.sln
+		SccProjectName1 = Neovolve.Switch.Skinning
+		SccLocalPath1 = Neovolve.Switch.Skinning
+		SccProjectUniqueName2 = Neovolve.Switch\\Neovolve.Switch.csproj
+		SccProjectTopLevelParentUniqueName2 = Neovolve.Switch.sln
+		SccProjectName2 = Neovolve.Switch
+		SccLocalPath2 = Neovolve.Switch
+		SccProjectUniqueName3 = Neovolve.Switch.Deployment\\Neovolve.Switch.Deployment.wixproj
+		SccProjectTopLevelParentUniqueName3 = Neovolve.Switch.sln
+		SccProjectName3 = Neovolve.Switch.Deployment
+		SccLocalPath3 = Neovolve.Switch.Deployment
+		SccProjectUniqueName4 = Neovolve.Switch.Extensibility\\Neovolve.Switch.Extensibility.csproj
+		SccProjectTopLevelParentUniqueName4 = Neovolve.Switch.sln
+		SccProjectName4 = Neovolve.Switch.Extensibility
+		SccLocalPath4 = Neovolve.Switch.Extensibility
+		SccProjectUniqueName5 = Neovolve.Switch.Extensibility.UnitTests\\Neovolve.Switch.Extensibility.UnitTests.csproj
+		SccProjectTopLevelParentUniqueName5 = Neovolve.Switch.sln
+		SccProjectName5 = Neovolve.Switch.Extensibility.UnitTests
+		SccLocalPath5 = Neovolve.Switch.Extensibility.UnitTests
+		SccProjectUniqueName6 = Neovolve.Switch.UnitTests\\Neovolve.Switch.UnitTests.csproj
+		SccProjectTopLevelParentUniqueName6 = Neovolve.Switch.sln
+		SccProjectName6 = Neovolve.Switch.UnitTests
+		SccLocalPath6 = Neovolve.Switch.UnitTests
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Neovolve.Switch.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A68241D-BDD3-452D-B5A3-8DAEBCADEDE4}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{5A68241D-BDD3-452D-B5A3-8DAEBCADEDE4}.Debug|Any CPU.Build.0 = Debug|x86
+		{5A68241D-BDD3-452D-B5A3-8DAEBCADEDE4}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{5A68241D-BDD3-452D-B5A3-8DAEBCADEDE4}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{5A68241D-BDD3-452D-B5A3-8DAEBCADEDE4}.Debug|x86.ActiveCfg = Debug|x86
+		{5A68241D-BDD3-452D-B5A3-8DAEBCADEDE4}.Debug|x86.Build.0 = Debug|x86
+		{5A68241D-BDD3-452D-B5A3-8DAEBCADEDE4}.Release|Any CPU.ActiveCfg = Release|x86
+		{5A68241D-BDD3-452D-B5A3-8DAEBCADEDE4}.Release|Any CPU.Build.0 = Release|x86
+		{5A68241D-BDD3-452D-B5A3-8DAEBCADEDE4}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{5A68241D-BDD3-452D-B5A3-8DAEBCADEDE4}.Release|Mixed Platforms.Build.0 = Release|x86
+		{5A68241D-BDD3-452D-B5A3-8DAEBCADEDE4}.Release|x86.ActiveCfg = Release|x86
+		{5A68241D-BDD3-452D-B5A3-8DAEBCADEDE4}.Release|x86.Build.0 = Release|x86
+		{5A8006B8-5AE8-4594-90EE-FE003873AA8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A8006B8-5AE8-4594-90EE-FE003873AA8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A8006B8-5AE8-4594-90EE-FE003873AA8B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{5A8006B8-5AE8-4594-90EE-FE003873AA8B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{5A8006B8-5AE8-4594-90EE-FE003873AA8B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5A8006B8-5AE8-4594-90EE-FE003873AA8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A8006B8-5AE8-4594-90EE-FE003873AA8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A8006B8-5AE8-4594-90EE-FE003873AA8B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{5A8006B8-5AE8-4594-90EE-FE003873AA8B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{5A8006B8-5AE8-4594-90EE-FE003873AA8B}.Release|x86.ActiveCfg = Release|Any CPU
+		{43B14670-5F14-4FEB-9652-CF956093C682}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{43B14670-5F14-4FEB-9652-CF956093C682}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{43B14670-5F14-4FEB-9652-CF956093C682}.Debug|x86.ActiveCfg = Debug|x86
+		{43B14670-5F14-4FEB-9652-CF956093C682}.Debug|x86.Build.0 = Debug|x86
+		{43B14670-5F14-4FEB-9652-CF956093C682}.Release|Any CPU.ActiveCfg = Release|x86
+		{43B14670-5F14-4FEB-9652-CF956093C682}.Release|Any CPU.Build.0 = Release|x86
+		{43B14670-5F14-4FEB-9652-CF956093C682}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{43B14670-5F14-4FEB-9652-CF956093C682}.Release|Mixed Platforms.Build.0 = Release|x86
+		{43B14670-5F14-4FEB-9652-CF956093C682}.Release|x86.ActiveCfg = Release|x86
+		{43B14670-5F14-4FEB-9652-CF956093C682}.Release|x86.Build.0 = Release|x86
+		{EDA0FD02-1A63-4F6A-912B-FD1FAEA186EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDA0FD02-1A63-4F6A-912B-FD1FAEA186EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDA0FD02-1A63-4F6A-912B-FD1FAEA186EF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{EDA0FD02-1A63-4F6A-912B-FD1FAEA186EF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{EDA0FD02-1A63-4F6A-912B-FD1FAEA186EF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EDA0FD02-1A63-4F6A-912B-FD1FAEA186EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDA0FD02-1A63-4F6A-912B-FD1FAEA186EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDA0FD02-1A63-4F6A-912B-FD1FAEA186EF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{EDA0FD02-1A63-4F6A-912B-FD1FAEA186EF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{EDA0FD02-1A63-4F6A-912B-FD1FAEA186EF}.Release|x86.ActiveCfg = Release|Any CPU
+		{BEA5765C-75A5-470D-952B-3FA9B2566971}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEA5765C-75A5-470D-952B-3FA9B2566971}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEA5765C-75A5-470D-952B-3FA9B2566971}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BEA5765C-75A5-470D-952B-3FA9B2566971}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BEA5765C-75A5-470D-952B-3FA9B2566971}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BEA5765C-75A5-470D-952B-3FA9B2566971}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEA5765C-75A5-470D-952B-3FA9B2566971}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEA5765C-75A5-470D-952B-3FA9B2566971}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BEA5765C-75A5-470D-952B-3FA9B2566971}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BEA5765C-75A5-470D-952B-3FA9B2566971}.Release|x86.ActiveCfg = Release|Any CPU
+		{B0DCF35D-D3F7-4AA2-84D2-5E63084F2884}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0DCF35D-D3F7-4AA2-84D2-5E63084F2884}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0DCF35D-D3F7-4AA2-84D2-5E63084F2884}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B0DCF35D-D3F7-4AA2-84D2-5E63084F2884}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B0DCF35D-D3F7-4AA2-84D2-5E63084F2884}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B0DCF35D-D3F7-4AA2-84D2-5E63084F2884}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0DCF35D-D3F7-4AA2-84D2-5E63084F2884}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0DCF35D-D3F7-4AA2-84D2-5E63084F2884}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B0DCF35D-D3F7-4AA2-84D2-5E63084F2884}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B0DCF35D-D3F7-4AA2-84D2-5E63084F2884}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5A8006B8-5AE8-4594-90EE-FE003873AA8B} = {F943055C-B7DB-490C-B48E-EDAF56B13E0A}
+		{EDA0FD02-1A63-4F6A-912B-FD1FAEA186EF} = {F943055C-B7DB-490C-B48E-EDAF56B13E0A}
+		{5A68241D-BDD3-452D-B5A3-8DAEBCADEDE4} = {F943055C-B7DB-490C-B48E-EDAF56B13E0A}
+		{E231D242-C247-46ED-A646-3040FFBDBE41} = {C5F591C2-671C-4C74-AD45-4DEEB88036E5}
+		{030E5FBF-61C3-4CFF-A39D-3DA575C431F5} = {C5F591C2-671C-4C74-AD45-4DEEB88036E5}
+		{3C1EFF7A-0EE3-49E7-84AA-2EF0750C7FE0} = {C5F591C2-671C-4C74-AD45-4DEEB88036E5}
+		{575EE0A4-A412-46FC-A2D9-9ABBBB2B618D} = {C5F591C2-671C-4C74-AD45-4DEEB88036E5}
+		{04202D65-D115-4BDD-8D28-D9F7D68C9123} = {030E5FBF-61C3-4CFF-A39D-3DA575C431F5}
+		{5C87A6EE-B06F-4ACE-85EC-71BCDF1EA466} = {030E5FBF-61C3-4CFF-A39D-3DA575C431F5}
+		{22560465-ACC0-44B7-84E6-49FCCE0CA767} = {3C1EFF7A-0EE3-49E7-84AA-2EF0750C7FE0}
+		{43B14670-5F14-4FEB-9652-CF956093C682} = {BDF98459-6D82-48FA-8580-501D6E89DD06}
+		{BEA5765C-75A5-470D-952B-3FA9B2566971} = {18D605A2-F900-4EC7-86D5-9BE580B39F4C}
+		{B0DCF35D-D3F7-4AA2-84D2-5E63084F2884} = {18D605A2-F900-4EC7-86D5-9BE580B39F4C}
+		{DCDC7276-2E54-4487-AE84-A885666E5C49} = {575EE0A4-A412-46FC-A2D9-9ABBBB2B618D}
+	EndGlobalSection
+EndGlobal

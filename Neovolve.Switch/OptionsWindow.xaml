@@ -1,0 +1,255 @@
+﻿<Window x:Class="Neovolve.Switch.OptionsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Options"
+        Height="453"
+        Width="543"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        x:ClassModifier="internal"
+        xmlns:my="clr-namespace:Neovolve.Switch"
+        xmlns:Controls="clr-namespace:Neovolve.Switch.Controls"
+        xmlns:Converters="clr-namespace:Neovolve.Switch.Converters"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:UpdateManagement="clr-namespace:Neovolve.Switch.UpdateManagement"
+        ShowInTaskbar="False"
+        Icon="/Switch;component/Properties/Switch.ico">
+	<Window.Resources>
+		<ResourceDictionary>
+			<Converters:ScalePercentageConverter x:Key="scalePercentageConverter" />
+			<Converters:EnumDisplayConverter x:Key="enumDisplayConverter" />
+			<Converters:VisibleContentConverter x:Key="visibleContentConverter" />
+			<ObjectDataProvider MethodName="GetValues"
+			                    ObjectType="{x:Type System:Enum}"
+			                    x:Key="FrequencyEnumSource">
+				<ObjectDataProvider.MethodParameters>
+					<x:Type TypeName="UpdateManagement:UpdateFrequency" />
+				</ObjectDataProvider.MethodParameters>
+			</ObjectDataProvider>
+			<ObjectDataProvider MethodName="GetValues"
+			                    ObjectType="{x:Type System:Enum}"
+			                    x:Key="PackageTypeEnumSource">
+				<ObjectDataProvider.MethodParameters>
+					<x:Type TypeName="UpdateManagement:PackageType" />
+				</ObjectDataProvider.MethodParameters>
+			</ObjectDataProvider>
+		</ResourceDictionary>
+	</Window.Resources>
+	<DockPanel LastChildFill="False">
+		<TabControl DockPanel.Dock="Top"
+		            Height="370"
+		            Width="521">
+			<TabItem Header="Zoom">
+				<StackPanel Orientation="Vertical">
+					<TextBlock Padding="5">
+						Zoom:
+						<TextBlock Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:OptionsWindow, AncestorLevel=1}, Mode=OneWay, Path=UpdatedSettings.Scale, Converter={StaticResource scalePercentageConverter}}"></TextBlock>
+						%
+					</TextBlock>
+					<Slider Minimum="0.5"
+					        Maximum="10"
+					        Padding="5"
+					        Orientation="Horizontal"
+					        Margin="5"
+					        Value="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:OptionsWindow, AncestorLevel=1}, Mode=TwoWay, Path=UpdatedSettings.Scale}" />
+				</StackPanel>
+			</TabItem>
+			<TabItem Header="Skin">
+				<StackPanel Orientation="Horizontal">
+					<ListBox x:Name="AvailableSkins"
+					         ItemsSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:OptionsWindow, AncestorLevel=1}, Path=Skins}"
+					         Width="214"
+					         SelectedValue="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:OptionsWindow, AncestorLevel=1}, Path=UpdatedSettings.CurrentSkinPath}"
+					         SelectedValuePath="FilePath">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<TextBlock Text="{Binding DisplayName}" />
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+					<GroupBox Header="Skin details"
+					          HorizontalAlignment="Left"
+					          VerticalAlignment="Top"
+					          Height="335"
+					          Width="293">
+						<StackPanel Orientation="Vertical">
+							<Grid DataContext="{Binding ElementName=AvailableSkins, Path=SelectedItem}"
+							      VerticalAlignment="Top">
+								<Grid.RowDefinitions>
+									<RowDefinition />
+									<RowDefinition />
+									<RowDefinition />
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="56" />
+									<ColumnDefinition />
+								</Grid.ColumnDefinitions>
+
+								<Label Grid.Row="0"
+								       Grid.Column="0">
+									Name:
+								</Label>
+								<TextBlock Grid.Row="0"
+								           Grid.Column="1"
+								           Text="{Binding DisplayName}"
+								           Padding="5" />
+								<Label Grid.Row="1"
+								       Grid.Column="0">
+									Author:
+								</Label>
+								<StackPanel Orientation="Vertical"
+								            Grid.Row="1"
+								            Grid.Column="1">
+									<TextBlock Name="Author"
+									           Text="{Binding Definition.Description.Author.Name}"
+									           Padding="5, 5, 0, 0" />
+									<TextBlock Padding="5,2,0,0"
+									           Visibility="{Binding Path=Definition.Description.Author.Email, Converter={StaticResource visibleContentConverter}}">
+										<Controls:ClickableLink NavigateUri="{Binding Definition.Description.Author.Email}">
+											<Run Text="{Binding Definition.Description.Author.Email}" />
+										</Controls:ClickableLink>
+									</TextBlock>
+									<TextBlock Padding="5,2,0,0"
+									           Visibility="{Binding Path=Definition.Description.Author.Website, Converter={StaticResource visibleContentConverter}}">
+										<Controls:ClickableLink NavigateUri="{Binding Definition.Description.Author.Website}">
+											<Run Text="{Binding Definition.Description.Author.Website}" />
+										</Controls:ClickableLink>
+									</TextBlock>
+								</StackPanel>
+							</Grid>
+							<Border Padding="5">
+								<Image DataContext="{Binding ElementName=AvailableSkins, Path=SelectedItem}"
+								       Source="{Binding Definition.Description.Screenshot.Source}"
+								       MaxHeight="215" Stretch="Uniform" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" StretchDirection="DownOnly" />
+							</Border>
+						</StackPanel>
+					</GroupBox>
+				</StackPanel>
+			</TabItem>
+			<TabItem Header="Updates">
+				<StackPanel Orientation="Vertical">
+					<TextBlock Padding="5">
+						<CheckBox Content="Enable auto updates"
+						          IsChecked="{Binding Path=UpdatedSettings.AutoUpdatesEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=my:OptionsWindow, AncestorLevel=1}}" />
+					</TextBlock>
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition />
+							<RowDefinition />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="96" />
+							<ColumnDefinition Width="89" />
+							<ColumnDefinition Width="304" />
+						</Grid.ColumnDefinitions>
+
+						<TextBlock Padding="5"
+						           Grid.Row="0"
+						           Grid.Column="0"
+						           TextAlignment="Right">
+							Frequency:
+						</TextBlock>
+                        <ComboBox Margin="5" Grid.Row="0"
+						          Grid.Column="1"
+						          ItemsSource="{Binding Source={StaticResource FrequencyEnumSource}, Mode=OneTime, Converter={StaticResource enumDisplayConverter}}"
+						          SelectedItem="{Binding Path=UpdatedSettings.UpdateFrequency, RelativeSource={RelativeSource FindAncestor, AncestorType=my:OptionsWindow, AncestorLevel=1}, Converter={StaticResource enumDisplayConverter}}"
+						          IsEnabled="{Binding Path=UpdatedSettings.AutoUpdatesEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=my:OptionsWindow, AncestorLevel=1}}" />
+
+						<TextBlock Padding="5"
+						           Grid.Row="1"
+						           Grid.Column="0"
+						           TextAlignment="Right">
+							Release type:
+						</TextBlock>
+						<ComboBox Margin="5" Grid.Row="1"
+						          Grid.Column="1"
+						          ItemsSource="{Binding Source={StaticResource PackageTypeEnumSource}, Mode=OneTime}"
+						          SelectedItem="{Binding Path=UpdatedSettings.UpdatePackageType, RelativeSource={RelativeSource FindAncestor, AncestorType=my:OptionsWindow, AncestorLevel=1}}"
+						          IsEnabled="{Binding Path=UpdatedSettings.AutoUpdatesEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=my:OptionsWindow, AncestorLevel=1}}" />
+					</Grid>
+				</StackPanel>
+			</TabItem>
+			<TabItem Header="About">
+				<StackPanel Orientation="Vertical">
+					<TextBlock Padding="5">
+						Switch
+						<TextBlock Text="{my:VersionBinding ProductVersion}" />
+						by
+						<Controls:ClickableLink NavigateUri="http://www.neovolve.com">Rory Primrose</Controls:ClickableLink>
+					</TextBlock>
+					<TextBlock Padding="5"
+					           TextWrapping="WrapWithOverflow">
+						The original version of Switch was written in VB6 and first released in
+						<Controls:ClickableLink NavigateUri="http://www.neovolve.com/post/2001/12/02/26.aspx">December 2001</Controls:ClickableLink>
+						.
+						It went through many versions over the following months with
+						<Controls:ClickableLink NavigateUri="http://www.neovolve.com/post/2002/08/06/Switch-170.aspx">version 1.7.0</Controls:ClickableLink>
+						being the last VB6 release.
+					</TextBlock>
+
+					<TextBlock Padding="5"
+					           TextWrapping="WrapWithOverflow">
+						This version is a port of the original application to the .Net framework using WPF. 
+						It allows the application to run on modern Windows operating systems.
+					</TextBlock>
+
+					<Grid Margin="0, 20">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="96" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="29" />
+							<RowDefinition />
+							<RowDefinition />
+							<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+
+						<Label Grid.Row="0"
+						       Grid.Column="0"
+						       Content="Download skins:" />
+						<TextBlock Grid.Row="0"
+						           Grid.Column="1"
+						           Padding="5">
+							<Controls:ClickableLink NavigateUri="http://www.neovolve.com/?tag=/Switch-Skins">http://www.neovolve.com/?tag=/Switch-Skins</Controls:ClickableLink>
+						</TextBlock>
+
+						<Label Grid.Row="2"
+						       Grid.Column="0"
+						       Content="Submit issue:" />
+						<TextBlock Grid.Row="2"
+						           Grid.Column="1"
+						           Padding="5">
+							<Controls:ClickableLink NavigateUri="http://switch.codeplex.com/WorkItem/Create">http://switch.codeplex.com/WorkItem/Create</Controls:ClickableLink>
+						</TextBlock>
+
+						<Label Grid.Row="3"
+						       Grid.Column="0"
+						       Content="View discussion:" />
+						<TextBlock Grid.Row="3"
+						           Grid.Column="1"
+						           Padding="5">
+							<Controls:ClickableLink NavigateUri="http://switch.codeplex.com/discussions">http://switch.codeplex.com/discussions</Controls:ClickableLink>
+						</TextBlock>
+
+					</Grid>
+				</StackPanel>
+			</TabItem>
+		</TabControl>
+		<StackPanel HorizontalAlignment="Right"
+		            Orientation="Horizontal"
+		            Margin="10"
+		            DockPanel.Dock="Bottom">
+			<Button Content="OK"
+			        Height="23"
+			        Width="75"
+			        IsDefault="True"
+			        Margin="0, 0, 10, 0"
+			        Click="OK_Click" />
+			<Button Content="Cancel"
+			        Height="23"
+			        Width="75"
+			        IsCancel="True" />
+		</StackPanel>
+	</DockPanel>
+</Window>

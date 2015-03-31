@@ -1,0 +1,51 @@
+<?xml version='1.0'
+      encoding='UTF-8' ?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+
+  <?define EventLogSourceName = "Switch" ?>
+  
+  <Fragment>
+    <DirectoryRef Id="INSTALLLOCATION">
+      <Component Id="EventLogSource"
+                 Guid="AA1A740A-F813-4A87-B1DC-3D0224DB8C5B">
+
+        <util:EventSource Log="Application"
+                          Name="$(var.EventLogSourceName)"
+                          EventMessageFile="[NETFRAMEWORK40INSTALLROOTDIR]EventLogMessages.dll"
+                          SupportsErrors="yes"
+                          SupportsInformationals="yes"
+                          SupportsWarnings="yes" />
+
+        <CreateFolder />
+
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="INSTALLLOCATION">
+      <Component Id="EventLogConfig"
+                 Guid="06DCD1E3-D7D3-49D7-96F9-610F33901525">
+        <util:XmlConfig Id="UpdateEventLogSource"
+                        Action="create"
+                        ElementPath="//configuration/loggingConfiguration/listeners/add[\[]@log='Application' and @source='Application'[\]]/@source"
+                        File="[INSTALLLOCATION]\$(var.Neovolve.Switch.TargetFileName).config"
+                        Node="value"
+                        On="install"
+                        Sequence="1"
+                        Value="$(var.EventLogSourceName)" />
+        
+        <CreateFolder />
+
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="EventLog">
+      <ComponentRef Id="EventLogSource" />
+      <ComponentRef Id="EventLogConfig" />
+    </ComponentGroup>
+  </Fragment>
+</Wix>

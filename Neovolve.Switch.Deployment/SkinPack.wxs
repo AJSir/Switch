@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+    <DirectoryRef Id="Skins">
+      <Component Id="Bamboo"
+                 Guid="0BECD97F-E6A4-4EAE-B934-10CE63ECB49B">
+        <File Id="Bamboo.szf"
+              Source="$(var.Neovolve.Switch.TargetDir)Skins\Bamboo.szf"
+              KeyPath="yes"
+              Checksum="yes" />
+      </Component>
+    </DirectoryRef>
+	</Fragment>
+  <Fragment>
+    <DirectoryRef Id="Skins">
+      <Component Id="MetalDepot"
+                 Guid="ED563FBC-5FFF-46D7-97B1-7005BF873CC2">
+        <File Id="MetalDepot.szf"
+              Source="$(var.Neovolve.Switch.TargetDir)Skins\MetalDepot.szf"
+              KeyPath="yes"
+              Checksum="yes" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="Skins">
+      <Component Id="sw_plastique"
+                 Guid="23CDE47A-D4E8-4E6D-B531-5380DA832184">
+        <File Id="sw_plastique.szf"
+              Source="$(var.Neovolve.Switch.TargetDir)Skins\sw_plastique.szf"
+              KeyPath="yes"
+              Checksum="yes" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <ComponentGroup Id="SkinPack">
+      <ComponentRef Id="Bamboo" />
+      <ComponentRef Id="MetalDepot" />
+      <ComponentRef Id="sw_plastique" />
+    </ComponentGroup>
+  </Fragment>
+</Wix>

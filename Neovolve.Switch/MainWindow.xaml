@@ -1,0 +1,180 @@
+﻿<Window x:Class="Neovolve.Switch.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:my="clr-namespace:Neovolve.Switch"
+        xmlns:Controls="clr-namespace:Neovolve.Switch.Controls"
+        ResizeMode="NoResize" 
+        SizeToContent="Manual" 
+        WindowStyle="None" mc:Ignorable="d" d:DesignHeight="290" d:DesignWidth="532" 
+        Height="{Binding RelativeSource={RelativeSource Self}, Path=Skin.Body.MouseOff.Height}" 
+            Width="{Binding RelativeSource={RelativeSource Self}, Path=Skin.Body.MouseOff.Width}" 
+        Topmost="{my:SettingsBinding OnTop}"
+        Left="{my:SettingsBinding Left}"
+        Top="{my:SettingsBinding Top}"
+        Title="{my:SettingsBinding Name}"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        Closing="Window_Closing" Icon="/Switch;component/Properties/Switch.ico">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources\SkinButton.xaml" />
+                <ResourceDictionary Source="Resources\SkinCanvas.xaml" />
+                <ResourceDictionary Source="Resources\SkinCheckBox.xaml" />
+                <ResourceDictionary Source="Resources\SkinTextBox.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Window.Background>
+        <ImageBrush Stretch="Uniform" TileMode="None" Opacity="100" ImageSource="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.Body.MouseOff.Source}" />
+    </Window.Background>
+    <Canvas>
+
+        <Button Style="{StaticResource SkinButton}" 
+                Click="RedMore_Click" 
+                ToolTip="Increase Red" 
+                DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.RedMore}" />
+
+        <Controls:ClickSelectTextBox Style="{StaticResource SkinTextBox}"  
+                 ToolTip="Red" 
+                 DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.Red}" 
+                 Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=CurrentColor.Red, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Button Style="{StaticResource SkinButton}" 
+                Click="RedLess_Click" 
+                ToolTip="Decrease Red" 
+                DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.RedLess}" />
+
+        <Button Style="{StaticResource SkinButton}" 
+                Click="GreenMore_Click" 
+                ToolTip="Increase Green" 
+                DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.GreenMore}" />
+
+        <Controls:ClickSelectTextBox Style="{StaticResource SkinTextBox}"  
+                 ToolTip="Green" 
+                 DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.Green}"
+                 Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=CurrentColor.Green, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Button Style="{StaticResource SkinButton}" 
+                Click="GreenLess_Click" 
+                ToolTip="Decrease Green" 
+                DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.GreenLess}" />
+
+        <Button Style="{StaticResource SkinButton}" 
+                Click="BlueMore_Click" 
+                ToolTip="Increase Blue" 
+                DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.BlueMore}" />
+
+        <Controls:ClickSelectTextBox Style="{StaticResource SkinTextBox}"  
+                 ToolTip="Blue" 
+                 DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.Blue}"
+                 Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=CurrentColor.Blue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Button Style="{StaticResource SkinButton}" 
+                Click="BlueLess_Click" 
+                ToolTip="Decrease Blue" 
+                DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.BlueLess}" />
+
+        <Button Style="{StaticResource SkinButton}" 
+                Click="HueMore_Click" 
+                ToolTip="Increase Hue" 
+                DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.HueMore}" />
+
+        <Controls:ClickSelectTextBox Style="{StaticResource SkinTextBox}"  
+                 ToolTip="Hue" 
+                 DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.Hue}"
+                 Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=CurrentColor.Hue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Button Style="{StaticResource SkinButton}" 
+                Click="HueLess_Click" 
+                ToolTip="Decrease Hue" 
+                DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.HueLess}" />
+
+        <Button Style="{StaticResource SkinButton}" 
+                Click="SaturationMore_Click" 
+                ToolTip="Increase Saturation" 
+                DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.SaturationMore}" />
+
+        <Controls:ClickSelectTextBox Style="{StaticResource SkinTextBox}"  
+                 ToolTip="Saturation" 
+                 DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.Saturation}"
+                 Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=CurrentColor.Saturation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Button Style="{StaticResource SkinButton}" 
+                Click="SaturationLess_Click" 
+                ToolTip="Decrease Saturation" 
+                DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.SaturationLess}" />
+
+        <Button Style="{StaticResource SkinButton}" 
+                Click="LuminanceMore_Click" 
+                ToolTip="Increase Luminance" 
+                DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.LuminanceMore}" />
+
+        <Controls:ClickSelectTextBox Style="{StaticResource SkinTextBox}"  
+                 ToolTip="Luminance" 
+                 DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.Luminance}"
+                 Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=CurrentColor.Luminance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Button Style="{StaticResource SkinButton}" 
+                Click="LuminanceLess_Click" 
+                ToolTip="Decrease Luminance" 
+                DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.LuminanceLess}" />
+
+        <Controls:ClickSelectTextBox Style="{StaticResource SkinTextBox}"  
+                 ToolTip="Hex" 
+                 MaxLength="7"
+                 DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.Hex}"
+                 Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=CurrentColor.Hex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Controls:ClickSelectTextBox Style="{StaticResource SkinTextBox}"  
+                 ToolTip="OLE" 
+                 MaxLength="10"
+                 DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.Ole}"
+                 Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=CurrentColor.Ole, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Controls:RightIsPressedButton Style="{StaticResource SkinButton}" 
+                x:Name="Pick"
+                ToolTip="Pick" 
+                DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.Pick}" />
+
+        <Canvas Style="{StaticResource SkinCanvas}"
+                ToolTip="Current color"
+                Name="Example"
+                DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.CurrentColor}">
+            <Canvas.Background>
+                <SolidColorBrush Color="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=CurrentColor.CurrentColor}" />
+            </Canvas.Background>
+        </Canvas>
+
+        <Controls:RightIsPressedButton Style="{StaticResource SkinButton}" 
+                ToolTip="Zoom" 
+                x:Name="Zoom"
+                DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.Zoom}" />
+
+        <Canvas Style="{StaticResource SkinCanvas}"
+                ToolTip="Zoomed screenshot"
+                Name="ZoomCapture"
+                DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.ZoomCapture}"
+                RenderTransformOrigin="0.5,0.5" ClipToBounds="True">
+            <Image Name="ZoomImage"
+                   RenderOptions.EdgeMode="Aliased"
+                   RenderOptions.BitmapScalingMode="NearestNeighbor"
+                   Stretch="None" RenderTransformOrigin="0.5,0.5" 
+                   Source="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=ScreenCapture}"/>
+        </Canvas>
+
+        <Button Style="{StaticResource SkinButton}" 
+                Click="Close_Click" 
+                ToolTip="Close" 
+                DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.Close}" />
+
+        <Button Style="{StaticResource SkinButton}" 
+                Click="Options_Click" 
+                ToolTip="Options" 
+                DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.Options}" />
+
+        <CheckBox Style="{StaticResource SkinCheckBox}" 
+                ToolTip="OnTop" 
+                IsChecked="{my:SettingsBinding OnTop}"
+                DataContext="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=my:MainWindow, AncestorLevel=1}, Path=Skin.OnTop}" />
+
+    </Canvas>
+</Window>

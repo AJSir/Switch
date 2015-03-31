@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <DirectoryRef Id="INSTALLLOCATION">
+      <Component Id="Microsoft.Practices.EnterpriseLibrary.Common"
+                 Guid="6E36C569-5094-498A-845A-A64A5CDEE3CF">
+        <File Id="Microsoft.Practices.EnterpriseLibrary.Common"
+              Source="$(var.Neovolve.Switch.TargetDir)Microsoft.Practices.EnterpriseLibrary.Common.dll"
+              KeyPath="yes"
+              Checksum="yes" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="INSTALLLOCATION">
+      <Component Id="Microsoft.Practices.EnterpriseLibrary.Logging"
+                 Guid="CB80983A-F436-4B07-ACDA-B2F63EA65802">
+        <File Id="Microsoft.Practices.EnterpriseLibrary.Logging"
+              Source="$(var.Neovolve.Switch.TargetDir)Microsoft.Practices.EnterpriseLibrary.Logging.dll"
+              KeyPath="yes"
+              Checksum="yes" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="INSTALLLOCATION">
+      <Component Id="Microsoft.Practices.ServiceLocation"
+                 Guid="57270596-DE52-46F5-906B-DA3F084276A9">
+        <File Id="Microsoft.Practices.ServiceLocation"
+              Source="$(var.Neovolve.Switch.TargetDir)Microsoft.Practices.ServiceLocation.dll"
+              KeyPath="yes"
+              Checksum="yes" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="INSTALLLOCATION">
+      <Component Id="Microsoft.Practices.Unity"
+                 Guid="4CC117D8-D616-4821-99C4-10ADC8F5ADB0">
+        <File Id="Microsoft.Practices.Unity"
+              Source="$(var.Neovolve.Switch.TargetDir)Microsoft.Practices.Unity.dll"
+              KeyPath="yes"
+              Checksum="yes" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="INSTALLLOCATION">
+      <Component Id="Microsoft.Practices.Unity.Configuration"
+                 Guid="3D1FE658-41E5-44C9-A298-55C1FE65EFD9">
+        <File Id="Microsoft.Practices.Unity.Configuration"
+              Source="$(var.Neovolve.Switch.TargetDir)Microsoft.Practices.Unity.Configuration.dll"
+              KeyPath="yes"
+              Checksum="yes" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="INSTALLLOCATION">
+      <Component Id="Microsoft.Practices.Unity.Interception"
+                 Guid="BF3A9320-DD21-4024-8A8A-F42976F95179">
+        <File Id="Microsoft.Practices.Unity.Interception"
+              Source="$(var.Neovolve.Switch.TargetDir)Microsoft.Practices.Unity.Interception.dll"
+              KeyPath="yes"
+              Checksum="yes" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="INSTALLLOCATION">
+      <Component Id="Neovolve.Toolkit"
+                 Guid="C96EED8C-A655-4174-96EC-335DD83186FE">
+        <File Id="Neovolve.Toolkit"
+              Source="$(var.Neovolve.Switch.TargetDir)Neovolve.Toolkit.dll"
+              KeyPath="yes"
+              Checksum="yes" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="INSTALLLOCATION">
+      <Component Id="Neovolve.Toolkit.Unity"
+                 Guid="57D6227C-058D-49A9-84B9-3014EA9C3E52">
+        <File Id="Neovolve.Toolkit.Unity"
+              Source="$(var.Neovolve.Switch.TargetDir)Neovolve.Toolkit.Unity.dll"
+              KeyPath="yes"
+              Checksum="yes" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="INSTALLLOCATION">
+      <Component Id="Ionic.Zip"
+                 Guid="47BC4F74-7314-4A8F-BF35-8709B55DB010">
+        <File Id="Ionic.Zip"
+              Source="$(var.Neovolve.Switch.TargetDir)Ionic.Zip.dll"
+              KeyPath="yes"
+              Checksum="yes" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <ComponentGroup Id="Dependencies">
+      <ComponentRef Id="Microsoft.Practices.EnterpriseLibrary.Common" />
+      <ComponentRef Id="Microsoft.Practices.EnterpriseLibrary.Logging" />
+      <ComponentRef Id="Microsoft.Practices.ServiceLocation" />
+      <ComponentRef Id="Microsoft.Practices.Unity" />
+      <ComponentRef Id="Microsoft.Practices.Unity.Configuration" />
+      <ComponentRef Id="Microsoft.Practices.Unity.Interception" />
+      <ComponentRef Id="Neovolve.Toolkit" />
+      <ComponentRef Id="Neovolve.Toolkit.Unity" />
+      <ComponentRef Id="Ionic.Zip" />
+    </ComponentGroup>
+  </Fragment>
+</Wix>
